@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat");
-
 *,
 *::after,
 *::before {
@@ -14,21 +13,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
 }
-
 h1 {
     margin: 24px 0px 18px 0px;
 }
 
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     border: 2px black solid;
+    height: 960px;
+    width: 960px;
 }
 
 .box {
-    height: 50px;
-    width: 50px;
+    flex: 1;
     border: 1px solid black;
     opacity: 10%;
 }
@@ -42,4 +42,9 @@ h1 {
 
 .change-resolution:hover {
     background-color: whitesmoke;
+}
+
+.line-container {
+    display: flex;
+    flex: 1;
 }

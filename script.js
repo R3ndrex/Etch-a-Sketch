@@ -21,6 +21,7 @@ function hoverDarkening(element) {
 function createGrid(amount) {
     for (let i = 0; i < amount; i++) {
         const linecontainer = document.createElement("div");
+        linecontainer.classList.add("line-container");
         container.appendChild(linecontainer);
         for (let j = 0; j < amount; j++) {
             const newDiv = document.createElement("div");
