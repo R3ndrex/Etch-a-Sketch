@@ -23,12 +23,14 @@ h1 {
 .container {
     display: flex;
     justify-content: center;
+    border: 2px black solid;
 }
 
 .box {
     height: 50px;
     width: 50px;
     border: 1px solid black;
+    opacity: 10%;
 }
 
 .change-resolution {
