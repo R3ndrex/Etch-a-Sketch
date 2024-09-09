@@ -4,7 +4,7 @@ This project offers an interactive grid where you can draw whatever you like! Th
 
 # Screenshots
 
--   ![Palm](https://i.imgur.com/LsFYqZc.png?raw=true)
+![Palm](https://i.imgur.com/LsFYqZc.png?raw=true)
 
 # Sources
 
