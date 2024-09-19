@@ -32,15 +32,18 @@ h1 {
     border: 1px solid black;
     opacity: 10%;
 }
+.button-container {
+    display: flex;
+}
 
-.change-resolution {
+button {
     padding: 12px 18px;
     background-color: white;
     font-size: 18px;
     margin: 12px;
 }
 
-.change-resolution:hover {
+button:hover {
     background-color: whitesmoke;
 }
 
