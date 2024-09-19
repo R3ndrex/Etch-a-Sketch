@@ -1,8 +1,9 @@
 const container = document.querySelector(".container");
-const button = document.querySelector(".change-resolution");
+const buttonResolution = document.querySelector(".change-resolution");
+const buttonClear = document.querySelector(".clear-button");
 createGrid(16);
 
-function hoverRandomColor(element) {
+function hoverColor(element) {
     element.addEventListener("mouseenter", () => {
         element.style["background-color"] = `rgb(${
             Math.floor(Math.random() * 255) + 1
@@ -26,21 +27,30 @@ function createGrid(amount) {
         for (let j = 0; j < amount; j++) {
             const newDiv = document.createElement("div");
             newDiv.classList.add("box");
-            hoverRandomColor(newDiv);
+            hoverColor(newDiv);
             hoverDarkening(newDiv);
             linecontainer.appendChild(newDiv);
         }
     }
 }
 
-button.addEventListener("click", () => {
-    let amount = Number(prompt("Enter your amount of boxes", 16));
-    if (amount > 100) {
-        console.error("Too much boxes!");
-    } else {
-        while (container.lastChild) {
-            container.removeChild(container.lastChild);
-        }
-        createGrid(amount);
+function clearGrid(element) {
+    let children = element.querySelectorAll(".box");
+    for (let i = 0; i < children.length; i++) {
+        children[i].style["background-color"] = "white";
+        children[i].style["opacity"] = 0.1;
     }
+}
+
+buttonResolution.addEventListener("click", () => {
+    let amount = Number(prompt("Enter your amount of boxes", 16));
+    if (amount === 0 || isNaN(amount)) {
+        amount = 16;
+    }
+    if (amount > 100) return alert("Too much boxes!");
+
+    container.innerHTML = "";
+    createGrid(amount);
 });
+
+buttonClear.addEventListener("click", () => clearGrid(container));
