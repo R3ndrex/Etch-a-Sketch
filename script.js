@@ -21,25 +21,24 @@ function hoverDarkening(element) {
 
 function createGrid(amount) {
     for (let i = 0; i < amount; i++) {
-        const linecontainer = document.createElement("div");
-        linecontainer.classList.add("line-container");
-        container.appendChild(linecontainer);
+        container.style["grid-template-columns"] = `repeat(${amount}, 1fr)`;
+        container.style["grid-template-rows"] = `repeat(${amount}, 1fr)`;
         for (let j = 0; j < amount; j++) {
             const newDiv = document.createElement("div");
             newDiv.classList.add("box");
             hoverColor(newDiv);
             hoverDarkening(newDiv);
-            linecontainer.appendChild(newDiv);
+            container.appendChild(newDiv);
         }
     }
 }
 
 function clearGrid(element) {
     let children = element.querySelectorAll(".box");
-    for (let i = 0; i < children.length; i++) {
-        children[i].style["background-color"] = "white";
-        children[i].style["opacity"] = 0.1;
-    }
+    children.forEach((child) => {
+        child.style["background-color"] = "white";
+        child.style["opacity"] = 0.1;
+    });
 }
 
 buttonResolution.addEventListener("click", () => {
