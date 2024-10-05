@@ -10,21 +10,23 @@ body {
     margin: 0px;
     padding: 0px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
     height: 100vh;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
-h1 {
-    margin: 24px 0px 18px 0px;
+
+.control-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    height: min(960px, 100%);
+    width: min(960px, 100%);
+    display: grid;
     border: 2px black solid;
-    height: 960px;
-    width: 960px;
 }
 
 .box {
@@ -32,22 +34,18 @@ h1 {
     border: 1px solid black;
     opacity: 10%;
 }
-.button-container {
-    display: flex;
-}
 
 button {
     padding: 12px 18px;
     background-color: white;
     font-size: 18px;
+}
+
+button,
+h1 {
     margin: 12px;
 }
 
 button:hover {
     background-color: whitesmoke;
-}
-
-.line-container {
-    display: flex;
-    flex: 1;
 }
