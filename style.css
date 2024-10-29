@@ -33,6 +33,7 @@ body {
     flex: 1;
     border: 1px solid black;
     opacity: 10%;
+    transition: background-color 250ms;
 }
 
 button {
